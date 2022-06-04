@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Cálculo IMC</title>
+</head>
+
+<body>
+	<style type="text/css">
+		body {
+			background-color: rgb(119, 119, 119);
+		}
+
+		div#interface {
+			width: 950px;
+			background-color: #ffffff;
+			margin: -80px auto 0px auto;
+			box-shadow: 0px 0px 10px black;
+			padding: 90px;
+		}
+
+		header#cabecalho h1 {
+			font-size: 35pt;
+			color: #000000;
+			padding: 0px;
+			margin-bottom: 0px;
+		}
+	</style>
+	<div id="interface">
+		<header id="cabecalho">
+			<hgroup>
+				<h1 style="text-align: center;">Cálculo de IMC</h1>
+			</hgroup>
+		</header>
+
+		<h3>Indice de massa corporal</h3>
+		<p> Consulte em qual grau no IMC você se encontra. Informe os dados abaixos e em seguida saiba o resultado.</p>
+
+
+		<form>
+			<label for="nome">Nome:</label>
+			<input id="nome" type="text">
+			<label for="peso">Peso:</label>
+			<input id="peso" type="text">
+
+			<label for="altura">Altura:</label>
+			<input id="altura" type="text">
+
+			<button id="calc">Calcular IMC</button>
+		</form>
+
+
+		<script>
+			document.getElementById('calc').addEventListener('click', calcImc)
+
+			function validate(p, a, cimc) {
+
+				if (p == '' | a == '') {
+					alert('É necessário preencher todos os campos para continuar')
+				} else if (p < 0 | a < 0) {
+					alert('Os números informados são menores que 0. É necessário informar números positivos')
+				}
+				else {
+					cimc()
+				}
+			}
+
+			function calcImc() {
+
+				let p = Number(document.getElementById('peso').value);
+				let a = Number(document.getElementById('altura').value);
+
+				validate(p, a, cimc)
+
+				function cimc() {
+
+					let imc = p / (Math.pow(a, 2))
+					alert(`SEU IMC É DE: ${imc.toFixed(2)}`)
+
+
+					if (imc < 20) {
+						alert('ABAIXO DO PESO')
+
+					} else if (imc >= 20 && imc <= 25) {
+						alert('NORMAL')
+
+					} else if (imc > 25 && imc < 30) {
+						alert('SOBREPESO')
+
+					} else if (imc >= 30 && imc <= 35) {
+						alert('OBESIDADE 1')
+
+					} else if (imc > 35 && imc < 40) {
+						alert('OBESIDADE 2')
+
+					} else if (imc > 40) {
+						alert('OBESIDADE 3')
+
+					}
+				}
+			}
+		</script>
+	</div>
+</body>
+
+</html>
