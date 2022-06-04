@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+    <form action="seia" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome" class="lai">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome" class="pl"> <br>
+            <label for="data" class="lai">Data de Nascimento: </label>
+            <input type="date" name="data" id="data" class="pl"><br>
+            <label for="email" class="lai">E-mail: </label>
+            <input type="email" name="email" id="email" class="pl"> <br>
+            <label for="tel" class="lai">Telefone: </label>
+            <input type="tel" name="tel" id="tel" class="pl"> <br>
+        </fieldset>
+        <fieldset>
+            <legend>Dados acadêmicos</legend>
+            <label for="Curso" class="lai">Curso:</label>
+            <select name="Curso" id="Curso">
+                <option value="ADS">ADS</option>
+                <option value="GTI">GTI</option>
+                <option value="TSI">TSI</option>
+                <option value="CD">CD</option>
+            </select><br>
+            <label for="Semestre">Semetre</label>
+            <input type="radio" name="1" id="Semestre">1º
+            <input type="radio" name="1" id="Semestre">2º
+            <input type="radio" name="1" id="Semestre">3º
+            <input type="radio" name="1" id="Semestre">4º
+        </fieldset>
+        <fieldset>
+            <label for="job">Trabalha?</label>
+            <input type="checkbox" name="job" id="job"><br>
+            <label for="local">Local de trabalho</label>
+            <input type="text" name="local" id="local"><br>
+            <label for="txt">Descreva sua experiência</label><br>
+            <textarea name="" id="txt" cols="50" rows="5"></textarea>
+        </fieldset>
+        <button type="reset">Limpar</button>
+        <button>Gravar</button>
+    </form>
+</body>
+
+</html>
